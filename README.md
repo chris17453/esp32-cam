@@ -111,3 +111,4 @@ This project is licensed under the BSD 3 License. See the `LICENSE` file for det
 
 - The ESPAsyncWebServer library for handling asynchronous web requests.
 - The ESP32 camera library for camera support.
+- The Ticker library for inteval actions (heartbeat etc)
