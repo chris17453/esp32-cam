@@ -82,6 +82,14 @@ This project sets up a web server on an ESP32 device to handle camera captures a
   - **Method:** POST
   - **Parameters:** `key` (required), `config` (required)
 
+### Example
+
+```bash
+curl --max-time 0.3  -X POST http://192.168.1.122/capture -F "key=supersecretkey" --output example.jpg
+```
+
+![Example](./assets/example.jpg)
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
