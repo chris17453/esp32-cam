@@ -73,6 +73,12 @@ This project sets up a web server on an ESP32 device to handle camera captures a
    - Connect your computer to the same Wi-Fi network as the ESP32.
    - Open a web browser and navigate to the IP address specified in the configuration file (e.g., `http://192.168.1.100`).
 
+### Heartbeat
+
+- The ESP32 sends periodic heartbeat messages to the configured heartbeat server.
+- The interval for sending heartbeat messages is specified in the configuration file (heartbeat_interval).
+- If listen_to_heartbeat_server_only is set to true, the web server will only respond to requests from the heartbeat server.
+
 ### Endpoints
 
 - **/capture:** Capture an image from the camera.
@@ -93,11 +99,25 @@ curl --max-time 0.3  -X POST http://192.168.1.122/capture -F "key=supersecretkey
 
 ![Example](./assets/example.jpg)
 
-### Heartbeat
+## SD Card config - config.txt
 
-- The ESP32 sends periodic heartbeat messages to the configured heartbeat server.
-- The interval for sending heartbeat messages is specified in the configuration file (heartbeat_interval).
-- If listen_to_heartbeat_server_only is set to true, the web server will only respond to requests from the heartbeat server.
+```ini
+ssid=your_ssid
+password=your_password
+device_name=your_device_name
+local_IP=192.168.1.100
+gateway=192.168.1.1
+subnet=255.255.255.0
+secure_key=your_secure_key
+resolution=QVGA
+heartbeat_server=your_server
+heartbeat_interval=60
+fqdn=your_fqdn
+debug=true
+listen_to_heartbeat_server_only=false
+jpeg_quality=10
+frame_buffer_count=2
+```
 
 ## Contributing
 
