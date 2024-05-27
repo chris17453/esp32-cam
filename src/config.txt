@@ -1,0 +1,9 @@
+ssid=WatkinsLabs
+password=peanutbutter$314X
+device_name=IOT_CAM1
+local_IP=192.168.1.122
+gateway=192.168.1.1
+subnet=255.255.255.0
+secure_key=jookie
+heartbeat_server=https://10.6.0.14/heartbeat
+resolution=QVGA
