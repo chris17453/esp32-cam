@@ -7,6 +7,9 @@ This project sets up a web server on an ESP32 device to handle camera captures a
 - **Camera Configuration:** Configure the ESP32 camera with various frame sizes and settings.
 - **Web Server:** Handle HTTP requests to capture images, update secure keys, and upload configurations.
 - **Wi-Fi Connectivity:** Connect to a Wi-Fi network using credentials stored in a configuration file.
+- **Heartbeat Functionality:** Send periodic heartbeat messages to a configured server.
+- **Restrict to Heartbeat Server:** Optionally restrict the web server to only respond to the configured heartbeat server.
+
 - **Debugging:** Print camera and system configurations for debugging purposes.
 
 ## Getting Started
@@ -89,6 +92,12 @@ curl --max-time 0.3  -X POST http://192.168.1.122/capture -F "key=supersecretkey
 ```
 
 ![Example](./assets/example.jpg)
+
+### Heartbeat
+
+- The ESP32 sends periodic heartbeat messages to the configured heartbeat server.
+- The interval for sending heartbeat messages is specified in the configuration file (heartbeat_interval).
+- If listen_to_heartbeat_server_only is set to true, the web server will only respond to requests from the heartbeat server.
 
 ## Contributing
 
